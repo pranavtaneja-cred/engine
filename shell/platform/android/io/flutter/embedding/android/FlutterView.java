@@ -903,6 +903,7 @@ public class FlutterView extends FrameLayout
    */
   @Override
   public boolean dispatchKeyEvent(@NonNull KeyEvent event) {
+    if (event == null) return false;
     if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0) {
       // Tell Android to start tracking this event.
       getKeyDispatcherState().startTracking(event, this);
